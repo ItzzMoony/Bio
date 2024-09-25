@@ -1,0 +1,245 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #ffa07a;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    cursor: none;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff6347;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.1s, height 0.1s, border-color 0.1s;
+    z-index: 9999;
+    box-shadow: 0 0 10px #ff6347;
+}
+
+.cursor::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: #ff6347;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.1s;
+}
+
+.cursor.clicked {
+    width: 16px;
+    height: 16px;
+    border-color: #ff8c69;
+}
+
+.cursor.clicked::after {
+    background-color: #ff8c69;
+}
+
+.cursor.hover {
+    width: 30px;
+    height: 30px;
+}
+
+.trail {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    box-shadow: 0 0 5px #ff6347;
+}
+
+.container {
+    background-color: rgba(61, 41, 41, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 160, 122, 0.3);
+    max-width: 350px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.header-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.profile-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff6347;
+}
+
+h1 {
+    color: #ff6347;
+    margin: 10px 0 5px;
+    font-size: 1.8em;
+}
+
+.pronouns {
+    font-style: italic;
+    color: #ffd700;
+    margin: 0 0 10px;
+    font-size: 0.9em;
+}
+
+.bio {
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: left;
+    background-color: rgba(255, 99, 71, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.bio p {
+    margin: 5px 0;
+}
+
+.skills {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.skills h2 {
+    color: #ff6347;
+    margin: 0 0 5px;
+    font-size: 1.2em;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+li::before {
+    content: "★ ";
+    color: #ff6347;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.github-link, .discord-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover, .discord-link:hover {
+    background-color: #ff8c69;
+    transform: translateY(-2px);
+}
+
+.discord-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #3d2929;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6347;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8c69;
+}
+
+/* Cursor trail */
+.trail {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    box-shadow: 0 0 5px #ff6347;
+}
+
+.join-button {
+    display: flex;
+    align-items: center;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.join-button img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+#leafCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: drop-shadow(0 0 5px rgba(255, 99, 71, 0.5));
+}
+
+#starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
