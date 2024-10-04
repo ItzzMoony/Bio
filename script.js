@@ -201,9 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
     animateLeaves();*/
 
     // Adjust canvas sizes on window resize
-    window.addEventListener('resize', () => {
+    /*window.addEventListener('resize', () => {
         setupStarCanvas();
         createStars();
         setupLeafCanvas();
-    });
+    });*/
 });
