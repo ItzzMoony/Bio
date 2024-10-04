@@ -61,8 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Force setting the background immediately on load
-    const timestamp = new Date().getTime(); // Cache-busting parameter
-    document.body.style.background = `#0f3460 url('leaves.jpg?${timestamp}') no-repeat center center fixed`;
+    //document.body.style.background = `#0f3460 url('leaves.jpg?${timestamp}') no-repeat center center fixed`;
     document.body.style.backgroundSize = "cover";
 
     // Setup star canvas for background effect
