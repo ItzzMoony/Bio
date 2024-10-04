@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         leaves.push(new Leaf());
     }
 
-    function drawLeaves() {
+    /*function drawLeaves() {
         leafCtx.clearRect(0, 0, leafCanvas.width, leafCanvas.height);
         leaves.forEach(leaf => {
             leaf.update();
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setupLeafCanvas();
-    animateLeaves();
+    animateLeaves();*/
 
     // Adjust canvas sizes on window resize
     window.addEventListener('resize', () => {
