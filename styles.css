@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0f3460 url('leaves.jpg') no-repeat center center fixed;
+    background: url('leaves.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffa07a;
     margin: 0;
