@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Force setting the background immediately on load
+    const timestamp = new Date().getTime(); // Cache-busting parameter
+    document.body.style.background = `#0f3460 url('leaves.jpg?${timestamp}') no-repeat center center fixed`;
+    document.body.style.backgroundSize = "cover";
+
     // Setup star canvas for background effect
     const starCanvas = document.getElementById('starCanvas');
     const starCtx = starCanvas.getContext('2d');
@@ -202,11 +207,4 @@ document.addEventListener('DOMContentLoaded', () => {
         createStars();
         setupLeafCanvas();
     });
-
-    // Force repaint the background after a short delay to fix initial white background issue
-    setTimeout(() => {
-        const timestamp = new Date().getTime();
-        document.body.style.background = `#0f3460 url('leaves.jpg?${timestamp}') no-repeat center center fixed`;
-        document.body.style.backgroundSize = "cover";
-    }, 100);
 });
