@@ -1,6 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    background: url('leaves.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #ffa07a;
     margin: 0;
     padding: 20px;
@@ -163,7 +164,20 @@ li::before {
     transition: all 0.3s ease;
 }
 
-.github-link:hover, .discord-link:hover {
+.galaxy-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    margin-left: 5px;
+}
+
+.github-link:hover, .discord-link:hover, .galaxy-link:hover {
     background-color: #ff8c69;
     transform: translateY(-2px);
 }
@@ -171,8 +185,11 @@ li::before {
 .discord-icon {
     width: 20px;
     height: 20px;
-    margin-right: 5px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1); /* Turns the icon white */
 }
+
+
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
@@ -229,15 +246,17 @@ li::before {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     filter: drop-shadow(0 0 5px rgba(255, 99, 71, 0.5));
+    background: transparent; /* Ensure the canvas itself doesn't have a background */
 }
 
 #starCanvas {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0px;
     width: 100%;
     height: 100%;
-    z-index: -2;
+    z-index: -3;
+    background: transparent; /* Ensure the canvas itself doesn't have a background */
 }
