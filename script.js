@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function createStars() {
+    /*function createStars() {
         stars.length = 0; // Clear existing stars
         for (let i = 0; i < starCount; i++) {
             stars.push(new Star());
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupStarCanvas();
     createStars();
-    animateStars();
+    animateStars();*/
 
     // Setup leaf canvas for falling leaves effect
     const leafCanvas = document.getElementById('leafCanvas');
