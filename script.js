@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Force setting the background immediately on load
     //document.body.style.background = `#0f3460 url('leaves.jpg?${timestamp}') no-repeat center center fixed`;
-    document.body.style.backgroundSize = "cover";
 
     // Setup star canvas for background effect
     const starCanvas = document.getElementById('starCanvas');
