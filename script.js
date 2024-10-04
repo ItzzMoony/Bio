@@ -65,14 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const starCtx = starCanvas.getContext('2d');
 
     function setupStarCanvas() {
-        // Set the star canvas to match the full size of the window
         starCanvas.width = window.innerWidth;
         starCanvas.height = window.innerHeight;
         drawStars(); // Draw stars initially
     }
 
     const stars = [];
-    const starCount = 300;  // Increased star count to ensure enough coverage on larger screens
+    const starCount = 300;
 
     class Star {
         constructor() {
@@ -135,12 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     class Leaf {
         constructor() {
-            // Start from anywhere along the top of the screen
-            this.x = Math.random() * leafCanvas.width; // Randomized along the entire width of the canvas
+            this.x = Math.random() * leafCanvas.width;
             this.y = -50;
             this.size = Math.random() * 15 + 10;
             this.speedY = Math.random() * 1 + 0.5;
-            this.speedX = Math.random() * 1 - 0.5; // Small horizontal drift to make the leaves spread out naturally
+            this.speedX = Math.random() * 1 - 0.5;
             this.color = leafColors[Math.floor(Math.random() * leafColors.length)];
             this.rotation = Math.random() * 360;
             this.rotationSpeed = Math.random() * 0.5 - 0.25;
@@ -148,19 +146,19 @@ document.addEventListener('DOMContentLoaded', () => {
             this.oscillationDistance = Math.random() * 3 + 1;
             this.swingFactor = 0;
         }
-    
+
         update() {
             this.y += this.speedY;
             this.x += this.speedX + Math.sin(this.swingFactor) * this.oscillationDistance;
             this.swingFactor += this.oscillationSpeed;
             this.rotation += this.rotationSpeed;
-    
+
             if (this.y > leafCanvas.height + 50) {
                 this.y = -50;
-                this.x = Math.random() * leafCanvas.width; // Reset position anywhere along the top
+                this.x = Math.random() * leafCanvas.width;
             }
         }
-    
+
         draw() {
             leafCtx.save();
             leafCtx.translate(this.x, this.y);
@@ -177,8 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
             leafCtx.restore();
         }
     }
-    
-    
 
     for (let i = 0; i < leafCount; i++) {
         leaves.push(new Leaf());
@@ -203,7 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adjust canvas sizes on window resize
     window.addEventListener('resize', () => {
         setupStarCanvas();
-        createStars(); // Create stars again to ensure they cover the new size
+        createStars();
         setupLeafCanvas();
     });
+
+    // Force repaint the background after a short delay to fix initial white background issue
+    setTimeout(() => {
+        const timestamp = new Date().getTime();
+        document.body.style.background = `#0f3460 url('leaves.jpg?${timestamp}') no-repeat center center fixed`;
+        document.body.style.backgroundSize = "cover";
+    }, 100);
 });

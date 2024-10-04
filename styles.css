@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('leaves.jpg') no-repeat center center fixed;
+    background: #0f3460 url('leaves.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffa07a;
     margin: 0;
@@ -13,6 +13,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 
 .cursor {
     width: 20px;
